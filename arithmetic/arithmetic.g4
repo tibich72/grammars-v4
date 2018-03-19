@@ -37,15 +37,15 @@ equation
    ;
 
 expression
-   : term ((PLUS | MINUS) term)*
+   : term ((PLUS | MINUS) expression)*
    ;
 
 term
-   : factor ((TIMES | DIV) factor)*
+   : factor ((TIMES | DIV) term)*
    ;
 
 factor
-   : signedAtom (POW signedAtom)*
+   : signedAtom (POW factor)*
    ;
 
 signedAtom
